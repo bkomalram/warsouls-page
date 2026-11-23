@@ -1,0 +1,82 @@
+:root{color-scheme:dark;--bg:#100e11;--panel:#191519;--ink:#f6efdf;--muted:#c7bdba;--gold:#ebbf7a;--line:#473538;--display:Georgia,'Times New Roman',serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:6rem}
+body{margin:0;background:var(--bg);color:var(--ink);font:1rem/1.65 system-ui,sans-serif}
+a{color:inherit;text-decoration:none}
+a:hover{color:var(--gold)}
+:focus-visible{outline:3px solid var(--gold);outline-offset:5px}
+.wrap{width:min(1130px,calc(100% - 64px));margin-inline:auto}
+.skip{position:fixed;left:1rem;top:1rem;z-index:10;background:var(--bg);padding:1rem;transform:translateY(-200%)}
+.skip:focus{transform:none}
+.bar{position:sticky;top:0;z-index:2;background:#110e11f5;border-bottom:1px solid var(--line)}
+.bar-inner,.footer-inner{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:inline-flex;align-items:center;gap:.7rem;font:700 1.45rem var(--display);white-space:nowrap}
+.crest{display:block;width:33px;height:38px;object-fit:contain}
+nav{display:flex;gap:clamp(1rem,3vw,2.7rem);color:var(--muted);font-size:.94rem}
+.button{display:inline-flex;justify-content:center;align-items:center;min-height:46px;padding:.65rem 1.35rem;font-weight:700;font-size:.91rem;border:1px solid transparent;border-radius:3px}
+.outline{border-color:#866953;background:#171217ad}
+.primary{color:#1d1010;background:var(--gold)}
+.primary:hover{color:#1d1010;background:#ffda9f}
+.hero{min-height:640px;display:grid;align-items:center;background:linear-gradient(0deg,var(--bg),transparent 33%),linear-gradient(90deg,#100d12 0%,#100d12c2 29%,transparent 75%),url('horda-hero.jpg') 68% 44%/cover no-repeat,#23151c}
+.hero-copy{padding-block:5rem 6rem}
+.eyebrow{color:var(--gold);font-size:.875rem;font-weight:750;letter-spacing:.16em;text-transform:uppercase;margin:0 0 1rem}
+h1,h2,.motto{font-family:var(--display);margin:0}
+h1{font-size:clamp(4.2rem,10vw,9rem);line-height:.96;letter-spacing:-.07em;text-shadow:0 6px 30px #0008}
+h1 span{color:var(--gold)}
+.motto{font-size:clamp(1.65rem,4vw,2.6rem);line-height:1.05;margin-top:1.25rem}
+.intro{max-width:405px;color:var(--muted);margin:1.35rem 0 1.75rem}
+.actions{display:flex;gap:.8rem;flex-wrap:wrap}
+h2{font-size:clamp(2.15rem,5vw,3.65rem);line-height:1.04;letter-spacing:-.04em}
+.about{display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(2rem,8vw,7rem)}
+.about{padding-block:4.5rem 5.5rem}
+.about p:not(.eyebrow),.recruit>p:not(.eyebrow),.streamers p:not(.eyebrow){color:var(--muted)}
+.about p:first-child{margin-top:0}
+.resources{border-block:1px solid var(--line);background:#161216}
+.streamers{padding-block:4.5rem}
+#streamer-list{margin-top:1.65rem}
+.streamer-note{padding:1.25rem;background:var(--panel);border:1px solid var(--line);border-radius:4px}
+.streamer-note p{margin:.3rem 0 0}
+.streamer-note a{color:var(--gold);text-decoration:underline}
+.recruit{text-align:center;padding-block:5rem;background:radial-gradient(ellipse at center,#331b22,transparent 68%)}
+.status{display:inline-block;width:.55rem;height:.55rem;margin-right:.45rem;border-radius:50%;background:#eaa769}
+#contact{color:var(--muted)}
+footer{border-top:1px solid var(--line);color:var(--muted)}
+footer .brand{color:var(--ink)}
+@media(max-width:700px){
+.wrap{width:calc(100% - 36px)}
+.bar-inner{min-height:0;padding-block:.7rem;flex-wrap:wrap}
+nav{order:3;width:100%;justify-content:center}
+.join{min-height:42px;padding-inline:.85rem}
+.hero{min-height:580px;align-items:end;background-position:center,center,62% center;background-image:linear-gradient(0deg,#100e11 4%,#100e11a8 56%,#100e1129),linear-gradient(90deg,#100e1180,transparent),url('horda-hero.jpg')}
+.hero-copy{padding-block:9rem 3rem}
+.about{grid-template-columns:1fr;padding-block:3rem}
+.streamers{padding-block:3rem}
+.recruit{padding-block:3.5rem}
+.footer-inner{flex-wrap:wrap;padding-block:1rem}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+.faction{display:flex;align-items:center;gap:clamp(1.25rem,5vw,3rem);padding:2rem clamp(1rem,5vw,3rem);margin-bottom:4rem;border:1px solid var(--line);border-left:3px solid #a53139;background:linear-gradient(110deg,#32191f,#181317)}
+.faction img{object-fit:contain;flex:none;width:clamp(45px,9vw,76px);height:auto}
+.faction p:last-child{color:var(--muted);margin-bottom:0}
+@media(max-width:380px){h1{font-size:clamp(3.55rem,16.5vw,4.2rem)}}
+
+#streamer-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,270px),1fr));gap:.7rem}
+.streamer-note h3{margin:0 0 .65rem;font-size:1.1rem}
+.channels{display:flex;flex-wrap:wrap;gap:.55rem}
+.channels .button{color:var(--gold);text-decoration:none;padding-inline:.85rem}
+.channels .button:hover{background:#37262b}
+.server{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.5rem,6vw,5rem);align-items:start;padding-block:4rem;border-bottom:1px solid var(--line)}
+.server p:not(.eyebrow){color:var(--muted)}
+.source-link{color:var(--gold);text-decoration:underline}
+.server-panel{background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:1.15rem}
+.server-heading,#server-rulesets li{display:flex;justify-content:space-between;align-items:baseline;gap:.8rem}
+#server-rulesets{padding:0;margin:.75rem 0 0;list-style:none}
+#server-rulesets li{padding:.45rem 0;border-top:1px solid var(--line)}
+#server-checked{margin:.65rem 0 0;font-size:.875rem}
+#server-checked:empty{display:none}
+[data-status="online"]{color:#9dcaa2}
+[data-status="offline"]{color:#ffaaa7}
+[data-status="degraded"]{color:var(--gold)}
+[data-status="unknown"]{color:var(--muted)}
+@media(max-width:700px){.server{grid-template-columns:1fr;padding-block:3rem}nav{flex-wrap:wrap;gap:.25rem 1rem}}
