@@ -65,3 +65,27 @@ async function refreshServerStatus() {
 }
 
 refreshServerStatus();
+
+const buildsView = document.querySelector('#builds-view');
+const buildsToggle = document.querySelector('#builds-toggle');
+const outsideBuilds = document.querySelectorAll(
+  'body > .skip, body > header, body > footer, main > :not(#builds), #builds > :not(#builds-view)',
+);
+
+function setBuildsExpanded(expanded) {
+  buildsView.classList.toggle('is-expanded', expanded);
+  document.documentElement.classList.toggle('builds-expanded', expanded);
+  for (const node of outsideBuilds) node.inert = expanded;
+  buildsToggle.textContent = expanded ? 'Salir de pantalla completa' : 'Ampliar a pantalla completa';
+  buildsToggle.focus({ preventScroll: true });
+}
+
+buildsToggle.addEventListener('click', () => {
+  setBuildsExpanded(!buildsView.classList.contains('is-expanded'));
+});
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape' && buildsView.classList.contains('is-expanded')) {
+    setBuildsExpanded(false);
+  }
+});
+buildsToggle.hidden = false;

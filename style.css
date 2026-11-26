@@ -86,3 +86,12 @@ nav{order:3;width:100%;justify-content:center}
 .builds-heading p{margin:.55rem 0 0;color:var(--muted)}
 .builds-frame{display:block;width:100%;height:clamp(31rem,80vh,55rem);border:1px solid var(--line);border-radius:4px;background:var(--panel)}
 @media(max-width:700px){.builds{padding-block:3rem}}
+
+.builds-toolbar{text-align:right}
+.builds-toolbar button{margin-bottom:.75rem;color:var(--ink);font-family:inherit;cursor:pointer}
+.builds-toolbar button[hidden]{display:none}
+html.builds-expanded{overflow:hidden}
+.builds-view.is-expanded{position:fixed;inset:0;z-index:20;display:grid;grid-template-rows:auto minmax(0,1fr);background:var(--bg)}
+.builds-view.is-expanded .builds-toolbar{padding:max(.5rem,env(safe-area-inset-top)) max(.75rem,env(safe-area-inset-right)) .5rem .75rem;border-bottom:1px solid var(--line)}
+.builds-view.is-expanded button{margin:0}
+.builds-view.is-expanded .builds-frame{height:100%;border:0;border-radius:0}
